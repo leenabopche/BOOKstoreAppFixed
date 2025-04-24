@@ -1,0 +1,14 @@
+
+version: '3.8'
+
+services:
+  bookstore-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stellar-bookstore
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
